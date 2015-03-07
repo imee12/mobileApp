@@ -6,29 +6,29 @@ angular.module('starter.services', [])
   // Some fake testing data
   var chats = [{
     id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
+    name: 'Recovery Room',
+    lastText: 'Somewhere in Charleston',
+    face: 'http://static.wixstatic.com/media/8c2658_83e45e79dcefe490ea63a02d250608ab.jpg_srz_160_160_75_22_0.50_1.20_0.00_jpg_srz'
   }, {
     id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
+    name: 'Rarebit',
+    lastText: 'King Street',
+    face: 'https://d13yacurqjgara.cloudfront.net/users/52758/screenshots/696315/rarebit_charleston_3_j_fletcher.jpg'
   }, {
     id: 2,
-    name: 'Andrew Jostlin',
-    lastText: 'Did you get the ice cream?',
-    face: 'https://pbs.twimg.com/profile_images/491274378181488640/Tti0fFVJ.jpeg'
+    name: 'The Palace Hotel',
+    lastText: 'Da Ghetto',
+    face: 'http://www.charlestoncitypaper.com/binary/9808/palace-hotel_1_jwb.jpg'
   }, {
     id: 3,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
+    name: 'The Faculty Lounge',
+    lastText: 'Ghettoville',
+    face: 'http://www.charlestoncitypaper.com/imager/faculty-lounge-bar-now-accepting-members-on-huger-street/b/slideshow/4201893/d56d/557252_425118367536257_1326800615_n.png'
   }, {
     id: 4,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/491995398135767040/ie2Z_V6e.jpeg'
+    name: 'Local 616',
+    lastText: 'Next to the Freeway Entrance',
+    face: 'https://cdn2.vox-cdn.com/uploads/chorus_image/image/38755114/local616.0.jpg'
   }];
 
   return {
@@ -93,4 +93,21 @@ angular.module('starter.services', [])
       return friends[friendId];
     }
   }
-});
+})
+
+.factory('InstaService', ['$http', function ($http) {
+//  return $resource('/api/post/:id')
+  // var url = 'https://api.instagram.com/v1/tags/term/media/recent?client_id=894e7d8e14284302842879cb81e2b4db';
+
+  return {
+    fetchPopular: function (callback){
+      var endPoint = "https://api.instagram.com/v1/media/popular?client_id=642176ece1e7445e99244cec26f4de1f&callback=JSON_CALLBACK";
+
+    $http.jsonp(endPoint).success(function(response){
+      callback(response.data);
+    });
+  }
+}
+}]);
+
+//});
