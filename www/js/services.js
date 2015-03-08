@@ -93,7 +93,7 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var friends = [{
-    
+
       id: 0,
       name: 'ACs',
       lastText: 'King Street',
@@ -123,6 +123,42 @@ angular.module('starter.services', [])
   }
 })
 
+
+    .factory('$localStorage', ['$window', function ($window) {
+        return {
+            set: function (key, value) {
+                $window.localStorage[key] = value;
+            },
+            get: function (key, defaultValue) {
+                return $window.localStorage[key] || defaultValue;
+            },
+            setObject: function (key, value) {
+                $window.localStorage[key] = JSON.stringify(value);
+            },
+            getObject: function (key) {
+                return JSON.parse($window.localStorage[key] || '{}');
+            }
+        }
+    }])
+    .factory('geoLocation', function ($localStorage) {
+        return {
+            setGeolocation: function (latitude, longitude) {
+                var _position = {
+                    latitude: latitude,
+                    longitude: longitude
+                }
+                $localStorage.setObject('geoLocation', _position)
+            },
+            getGeolocation: function () {
+                return glocation = {
+                    lat: $localStorage.getObject('geoLocation').latitude,
+                    lng: $localStorage.getObject('geoLocation').longitude
+                }
+            }
+        }
+    })
+
+
 .factory('InstaService', ['$http', function ($http) {
 //  return $resource('/api/post/:id')
   // var url = 'https://api.instagram.com/v1/tags/term/media/recent?client_id=894e7d8e14284302842879cb81e2b4db';
@@ -144,5 +180,67 @@ angular.module('starter.services', [])
   }
 }
 }]);
+
+
+
+// .factory('GoogleService', function ($http, $rootScope, $log) {
+//
+//     var map;
+//     var service;
+//     var infowindow;
+//     var placeArr = []
+//
+//     var getGoogleInfo = function initialize(locName) {
+//
+//       var coordinate=(locName).split(',');
+//       var latlng = new google.maps.LatLng(coordinate[0],coordinate[1]);
+//       console.log(latlng);
+//
+//
+//       map = new google.maps.Map(document.getElementById('map'), {
+//           center: latlng,
+//           zoom: 15
+//         });
+//
+//       var request = {
+//         location: latlng,
+//         radius: '500',
+//         query: 'bar'
+//       };
+//
+//       service = new google.maps.places
+//         .PlacesService(document.getElementById('main').appendChild(document.createElement('div')));
+//       service.textSearch(request, callback);
+//     }
+//
+//
+//     var callback = function (results, status) {
+//       if (status == google.maps.places.PlacesServiceStatus.OK) {
+//         for (var i = 0; i < results.length; i++) {
+//           var place = results[i];
+//           placeArr.push(place)
+//           // createMarker(results[i]);
+//           console.log(results[i])
+//         }
+//       }
+//     }
+//
+//     var readArr = function() {
+//       return placeArr
+//     }
+//
+//     var readOneArr = function(index) {
+//       return placeArr[index]
+//       console.log(placeArr[index])
+//     }
+//
+//     return {
+//       getBarInfo: getGoogleInfo,
+//       getAllBarz: readArr,
+//       getOneBar: readOneArr
+//     }
+//   });
+
+//}]);
 
 //});

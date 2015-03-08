@@ -2,7 +2,10 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) {
+  geoLocation.getGeolocation();
+
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
@@ -42,6 +45,61 @@ angular.module('starter.controllers', [])
   $scope.max = 5;
 
 })
+// .controller("GoogleCtrl", function (GoogleService, $scope, $location, $routeParams) {
+//
+//     var goog = this;
+//
+//     goog.allBars = GoogleService.getAllBarz();
+//
+//     goog.getSingleBar = GoogleService.getOneBar($routeParams.barIndex);
+//
+//     $scope.location= "";
+//       $scope.doSearch = function(){
+//               if($scope.location === ''){
+//                   alert('Directive did not update the location property in parent controller.');
+//               } else {
+//                   console.log($scope.location);
+//                 var locCoords = parseInt($scope.location)
+//                 console.log(locCoords);
+//                   goog.locationInput($scope.location)
+//               }
+//           };
+//
+//     goog.locationInput = function (newLocation) {
+//       var locName = newLocation
+//       console.log(locName)
+//       GoogleService.getBarInfo(locName)
+//     }
+//
+// })
+
+// .controller('MapCtrl', function($scope, $ionicLoading) {
+//   $scope.mapCreated = function(map) {
+//     $scope.map = map;
+//   };
+//
+//   $scope.centerOnMe = function () {
+//     console.log("Centering");
+//     if (!$scope.map) {
+//       return;
+//     }
+//
+//     $scope.loading = $ionicLoading.show({
+//       content: 'Getting current location...',
+//       showBackdrop: false
+//     });
+//
+//     navigator.geolocation.getCurrentPosition(function (pos) {
+//       console.log('Got pos', pos);
+//       $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+//       $scope.loading.hide();
+//     }, function (error) {
+//       alert('Unable to get location: ' + error.message);
+//     })
+// }
+
+
+//})
 .controller('FriendsCtrl', function($scope, Friends) {
   $scope.friends = Friends.all();
 })
