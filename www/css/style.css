@@ -10,4 +10,16 @@ margin: 5px;
 
 h1 {
   text-align: center;
+  font-family: "avenir", serif;
+  font-size: 3.5em;
+  background: -webkit-linear-gradient(#eee, #ddbf00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
+}
+
+
+body {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

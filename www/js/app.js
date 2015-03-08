@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directives'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform, $ionicPlatform,$cordovaGeolocation, geoLocation) {
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,31 +19,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleDefault();
     }
 
-    $cordovaGeolocation
-                .getCurrentPosition()
-                .then(function (position) {
-                    geoLocation.setGeolocation(position.coords.latitude, position.coords.longitude)
-                }, function (err) {
-                    geoLocation.setGeolocation(37.38, -122.09)
-  });
-
-  var options = {
-              frequency: 1000,
-              timeout: 3000,
-              enableHighAccuracy: true
-          };
-
-          var watch = $cordovaGeolocation.watchPosition(options);
-                   watch.promise.then(function () { /* Not  used */
-                       },
-                       function (err) {
-                           geoLocation.setGeolocation(37.38, -122.09)
-                       }, function (position) {
-                           geoLocation.setGeolocation(position.coords.latitude, position.coords.longitude)
-                       });
-
-               });
-
+});
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -68,7 +44,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'GeoCtrl'
+        controller: 'DashCtrl'
       }
     }
   })
