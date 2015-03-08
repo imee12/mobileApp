@@ -10,12 +10,34 @@
     <p>
       {{chat.lastText}}
     </p>
-    <p></p>
+    <p>{{chat.review}}</p>
+    <rating ng-model="rate" max="max"></rating>
+    <form action="http://maps.google.com/maps" method="get" target="_blank">
+Enter your starting address:
+<input type="text" name="saddr" />
+<input type="hidden" name="daddr" value="{{chat.address}}" />
+<input class ="direct" type="submit" value="Directions" />
+</form>
+
+<a  href="{{chat.phone}}" class="button button-positive">Call</a>
+  <!--   <a href="tel:+1-1800-555-5555" class="button button-positive">Call</a> -->
 <!--     <img src="{{photo.images.standard_resolution.url}}" alt=""> -->
-    </ion-content>
+  <!--   </ion-content> -->
+
+<!-- <ion-content class="pics">
+ -->
+ <!-- <div ng-controller="RatingDemoCtrl">
+    <h4>Rating</h4>
+    <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+    <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{chat.percent}}%</span>
+    <pre style="margin:15px 0;">Rate: <b>{{chat.rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
 
 
-<div ng-controller="InstaController">
+    </div> -->
+
+
+
+<div class="pics" ng-controller="InstaController">
 
 	<div class="bar">
 
@@ -43,4 +65,5 @@
 		</li>
 	</ul>
 </div>
+</ion-content>
 </ion-view>

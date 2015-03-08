@@ -16,3 +16,19 @@
 2015-03-07 14:52:37.936 myApp[18692:848736] Resetting plugins due to page load.
 2015-03-07 14:52:38.439 myApp[18692:848736] Finished load of: file:///Users/imee12/Library/Developer/CoreSimulator/Devices/95B21096-34EB-454F-9BF2-6F5356916012/data/Containers/Bundle/Application/546F1FF0-76E0-402A-BCF6-66599136113E/myApp.app/www/index.html#/tab/dash
 2015-03-07 14:52:38.971 myApp[18692:848736] THREAD WARNING: ['Device'] took '21.674316' ms. Plugin should use a background thread.
+2015-03-07 16:55:59.905 myApp[19412:883980] Apache Cordova native platform version 3.7.0 is starting.
+2015-03-07 16:55:59.916 myApp[19412:883980] Multi-tasking -> Device: YES, App: YES
+2015-03-07 16:55:59.957 myApp[19412:883980] Unlimited access to network resources
+2015-03-07 16:56:00.673 myApp[19412:883980] [CDVTimer][keyboard] 0.095963ms
+2015-03-07 16:56:00.673 myApp[19412:883980] [CDVTimer][TotalPluginStartup] 0.395954ms
+2015-03-07 16:56:01.696 myApp[19412:883980] Resetting plugins due to page load.
+2015-03-07 16:56:02.152 myApp[19412:883980] Finished load of: file:///Users/imee12/Library/Developer/CoreSimulator/Devices/95B21096-34EB-454F-9BF2-6F5356916012/data/Containers/Bundle/Application/19270EC6-D415-4F6A-951B-BE2AF78BC7BB/myApp.app/www/index.html#/tab/dash
+2015-03-07 16:56:02.527 myApp[19412:883980] THREAD WARNING: ['Device'] took '23.079102' ms. Plugin should use a background thread.
+2015-03-07 17:06:14.750 myApp[19412:883980] CDVWebViewDelegate: Navigation started when state=1
+2015-03-07 17:06:14.759 myApp[19412:883980] Failed to load webpage with error: CDVWebViewDelegate: Navigation started when state=1
+2015-03-07 17:06:14.759 myApp[19412:883980] Resetting plugins due to page load.
+2015-03-07 17:06:19.252 myApp[19412:883980] Finished load of: https://instagram.com/p/z8VAzjlYxN/
+2015-03-07 17:08:03.773 myApp[19412:883980] Resetting plugins due to page load.
+2015-03-07 17:08:05.696 myApp[19412:883980] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2015-03-07 17:08:05.698 myApp[19412:883980] Resetting plugins due to page load.
+2015-03-07 17:08:07.051 myApp[19412:883980] Finished load of: https://instagram.com/

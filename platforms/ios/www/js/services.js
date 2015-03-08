@@ -8,6 +8,7 @@ angular.module('starter.services', [])
     id: 0,
     name: 'Recovery Room',
     lastText: 'Somewhere in Charleston',
+    percent: '60',
     face: 'http://static.wixstatic.com/media/8c2658_83e45e79dcefe490ea63a02d250608ab.jpg_srz_160_160_75_22_0.50_1.20_0.00_jpg_srz'
   }, {
     id: 1,
@@ -101,7 +102,14 @@ angular.module('starter.services', [])
 
   return {
     fetchPopular: function (callback){
-      var endPoint = "https://api.instagram.com/v1/media/popular?client_id=642176ece1e7445e99244cec26f4de1f&callback=JSON_CALLBACK";
+      // var endPoint = "https://api.instagram.com/v1/media/popular?client_id=642176ece1e7445e99244cec26f4de1f&callback=JSON_CALLBACK";
+
+      // var endPoint =
+      // "https://api.instagram.com/v1/media/search?lat=32.784618&lng=-79.940918&client_id=894e7d8e14284302842879cb81e2b4db&callback=JSON_CALLBACK";
+
+      var endPoint=
+      "https://api.instagram.com/v1/tags/beer/media/recent?client_id=894e7d8e14284302842879cb81e2b4db&callback=JSON_CALLBACK&count=4";
+
 
     $http.jsonp(endPoint).success(function(response){
       callback(response.data);

@@ -1,1 +1,5 @@
 /* Empty. Add your own CSS if you like */
+.pics img {
+margin: 0px 0px 0px 25px;
+padding: 5px;
+}

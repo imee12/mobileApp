@@ -37,7 +37,11 @@ angular.module('starter.controllers', [])
 
   }])
 
+.controller('RatingDemoCtrl', function ($scope){
+  $scope.rate = 3;
+  $scope.max = 5;
 
+})
 .controller('FriendsCtrl', function($scope, Friends) {
   $scope.friends = Friends.all();
 })
